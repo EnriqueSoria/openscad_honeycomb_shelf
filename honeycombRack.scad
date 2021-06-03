@@ -31,7 +31,7 @@ evenRowBaseOffset = (minDiam-wallThickness)*cos(tiltDeg);
 module buildCombRect(numRows, numColumns){
     for(col = [0:1:numColumns-1]){
         offsetCol(col)
-        buildCol(numRows);
+        buildCol(numRows-(col%2==0?0:1));
     }
 }
 
